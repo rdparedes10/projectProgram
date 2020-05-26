@@ -1,0 +1,10 @@
+
+Agregar esto en Manifest Google Maps 
+ <uses-library
+      android:name="org.apache.http.legacy"
+      android:required="false" />
+
+Agregar Key en Google Maps 
+
+<meta-data android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBbWeU-qvX20lZrly-ng3DZ_4Wc_hU19h8" />

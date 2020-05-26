@@ -28,9 +28,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        $("#mySidenav").hide();
-        $("#map-canvas").hide();
-        loadLogin();
     },
 
     // Update DOM on a Received Event
