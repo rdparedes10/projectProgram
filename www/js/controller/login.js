@@ -19,10 +19,10 @@ function loadLogin() {
 		'<div class="form">' +
 		'<div class="register-form">' +
 		'<input type="text" id="ciRegister" placeholder="cedula"/>' +
-		'<input type="text" id="usernameRegister" placeholder="name"/>' +
+		'<input type="text" id="usernameRegister" placeholder="username"/>' +
 		'<input type="password"  id="passRegister" placeholder="password"/>' +
 		'<input type="text"  id="emailRegister" placeholder="email address"/>' +
-		'<button>create</button>' +
+		'<button onclick="openRegistration();">create</button>' +
 		' <p class="message">Already registered? <a href="#">Sign In</a></p>' +
 		'</div>' +
 		'<div class="login-form">' +
@@ -38,6 +38,31 @@ function loadLogin() {
 	var menu = '<span class="span-menu">Sign In</span>';
 	$('#mainMenuQuito').html(menu);
 
+	$('#username').on('input', function (a) {
+		$("#username").removeClass("inputError");
+		$('#idEr').hide();
+	});
+	$('#pass').on('input', function (a) {
+		$("#pass").removeClass("inputError");
+		$('#idEr').hide();
+	});
+
+	$('#ciRegister').on('input', function (a) {
+		$("#ciRegister").removeClass("inputError");
+		$('#idEr').hide();
+	});
+	$('#usernameRegister').on('input', function (a) {
+		$("#usernameRegister").removeClass("inputError");
+		$('#idEr').hide();
+	});
+	$('#passRegister').on('input', function (a) {
+		$("#passRegister").removeClass("inputError");
+		$('#idEr').hide();
+	});
+	$('#emailRegister').on('input', function (a) {
+		$("#emailRegister").removeClass("inputError");
+		$('#idEr').hide();
+	});
 }
 
 function sendInfoLogin() {
@@ -47,13 +72,15 @@ function sendInfoLogin() {
 		var urlRequest = urlServices + loginPath;
 		var jsonData = {
 			sessionId: sessionId,
-			objct: {
+			user: {
 				user: $("#username").val(),
 				pass: $("#pass").val(),
 			}
 		};
 		sendPostInfoServices(urlRequest, jsonData, signInValidate);
 	} else {
+		$("#username").val('');
+		$("#pass").val('');
 		$("#username").addClass("inputError");
 		$("#pass").addClass("inputError");
 		$('#idEr').show();
@@ -71,42 +98,6 @@ function signInValidate(data) {
 	}
 
 }
-
-function openRegistration() {
-	if ($("#usernameRegister").val() && $("#passRegister").val() && $("#emailRegister").val() && $("#ciRegister").val()) {
-		showOldProgress();
-		var urlRequest = urlServices + loginPath;
-		var jsonData = {
-			user: $("#usernameRegister").val(),
-			pass: $("#passRegister").val(),
-			email: $("#emailRegister").val(),
-			ci: $("#ciRegister").val(),
-		};
-		sendPostInfoServices(urlRequest, jsonData, registerValidate);
-	} else {
-		$("#usernameRegister").addClass("inputError");
-		$("#passRegister").addClass("inputError");
-		$("#emailRegister").addClass("inputError");
-		$("#ciRegister").addClass("inputError");
-		$('#idEr').show();
-	}
-	var menu = '<span class="span-menu">Create an account</span>';
-	$('#mainMenuQuito').html(menu);
-}
-
-function registerValidate(data) {
-	if (data && data.statusInfo.code === '0') {
-		loadLogin();
-		hideOldProgress();
-	} else {
-		$("#usernameRegister").addClass("inputError");
-		$("#passRegister").addClass("inputError");
-		$("#emailRegister").addClass("inputError");
-		$("#ciRegister").addClass("inputError");
-		$('#idEr').show();
-	}
-}
-
 function getSessionId() {
 	var urlRequest = urlServices + createSession;
 	sendGetInfoServices(urlRequest, function (data) {

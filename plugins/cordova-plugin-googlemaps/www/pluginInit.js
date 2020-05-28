@@ -91,7 +91,6 @@ function pluginInit() {
   cssAdjuster.setAttribute('type', 'text/css');
   cssAdjuster.innerText = [
     'html, body, ._gmaps_cdv_ {',
-    '   background-color: rgba(0,0,0,0) !important;',
     '}',
     '._gmaps_cdv_ .nav-decor {',
     '   display:none !important;',

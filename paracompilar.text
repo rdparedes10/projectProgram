@@ -1,10 +1,21 @@
 
-Agregar esto en Manifest Google Maps 
- <uses-library
-      android:name="org.apache.http.legacy"
-      android:required="false" />
 
 Agregar Key en Google Maps 
 
 <meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBbWeU-qvX20lZrly-ng3DZ_4Wc_hU19h8" />
+
+
+Agregar esto en Manifest Google Maps 
+ <uses-library
+      android:name="org.apache.http.legacy"
+      android:required="false" />
+
+
+Ejecutar SpringBoot
+
+mvn clean spring-boot:run
+
+mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8787
+
+mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8787"
