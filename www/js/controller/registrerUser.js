@@ -1,11 +1,10 @@
 function openRegistration() {
 	if ($("#usernameRegister").val() && $("#passRegister").val() && $("#emailRegister").val() && $("#ciRegister").val()) {
-		showOldProgress();
 		var urlRequest = urlServices + registerUser;
 		var jsonData = {
 			user: {
 				user: $("#usernameRegister").val(),
-				pass: $("#passRegister").val(),
+				pass: encryptionText($("#passRegister").val()),
 				email: $("#emailRegister").val(),
 				ci: $("#ciRegister").val(),
 			}
@@ -25,7 +24,6 @@ function openRegistration() {
 function registerValidate(data) {
 	if (data && data.statusInfo.code === '0') {
 		loadLogin();
-		hideOldProgress();
 	} else {
 		$("#usernameRegister").addClass("inputError");
 		$("#passRegister").addClass("inputError");

@@ -39,11 +39,9 @@ function onSuccess(position) {
 	//mapOptions
 
 	map.animateCamera(mapOptions);
-	hideOldProgress();
 }
 
 function onError(error) {
-	hideOldProgress();
 	alert('code: ' + error.code + '\n' +
 		'message: ' + error.message + '\n');
 }

@@ -68,13 +68,12 @@ function loadLogin() {
 function sendInfoLogin() {
 
 	if ($("#username").val() && $("#pass").val()) {
-		showOldProgress();
 		var urlRequest = urlServices + loginPath;
 		var jsonData = {
 			sessionId: sessionId,
 			user: {
 				user: $("#username").val(),
-				pass: $("#pass").val(),
+				pass: encryptionText($("#pass").val()),
 			}
 		};
 		sendPostInfoServices(urlRequest, jsonData, signInValidate);
