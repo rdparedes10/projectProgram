@@ -3,29 +3,32 @@ var sessionId = '';
 document.addEventListener('deviceready', function () {
 	loadLogin();
 	$('.message a').click(function () {
-		$('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+		getSessionId();
+		$('.div-login').animate({ height: "toggle", opacity: "toggle" }, "slow");
 	});
 });
 
 function loadLogin() {
 	sessionId = '';
+	closeNav();
 	getSessionId();
 	$("#mySidenav").hide();
 	$("#map-canvas").hide();
+	$('#login').show();
 	$("body").removeClass('map-custom');
 
 	var html = ' <div id="idEr"class="divInput errorSt" style="display: none;">Verifique los datos ingresados<br><br></div>' +
 		'<div class="login-page">' +
 		'<div class="form">' +
-		'<div class="register-form">' +
-		'<input type="text" id="ciRegister" placeholder="cedula"/>' +
+		'<div class="div-login register-form">' +
+		'<input type="tel" id="ciRegister" placeholder="cedula"/>' +
 		'<input type="text" id="usernameRegister" placeholder="username"/>' +
 		'<input type="password"  id="passRegister" placeholder="password"/>' +
 		'<input type="text"  id="emailRegister" placeholder="email address"/>' +
 		'<button onclick="openRegistration();">create</button>' +
 		' <p class="message">Already registered? <a href="#">Sign In</a></p>' +
 		'</div>' +
-		'<div class="login-form">' +
+		'<div class="div-login login-form">' +
 		'<input type="text"  id="username"  placeholder="username"/>' +
 		'<input type="password"   id="pass" placeholder="password"/>' +
 		'<button id="buttonI" onclick="sendInfoLogin()">login</button>' +
@@ -101,5 +104,13 @@ function getSessionId() {
 	var urlRequest = urlServices + createSession;
 	sendGetInfoServices(urlRequest, function (data) {
 		sessionId = data.params.sessionId;
+	});
+}
+
+function logout(){
+	loadLogin();
+	$('.message a').click(function () {
+		getSessionId();
+		$('.div-login').animate({ height: "toggle", opacity: "toggle" }, "slow");
 	});
 }

@@ -2,6 +2,7 @@ function openRegistration() {
 	if ($("#usernameRegister").val() && $("#passRegister").val() && $("#emailRegister").val() && $("#ciRegister").val()) {
 		var urlRequest = urlServices + registerUser;
 		var jsonData = {
+			sessionId: sessionId,
 			user: {
 				user: $("#usernameRegister").val(),
 				pass: encryptionText($("#passRegister").val()),
@@ -24,6 +25,7 @@ function openRegistration() {
 function registerValidate(data) {
 	if (data && data.statusInfo.code === '0') {
 		loadLogin();
+		$('.login-form').show();
 	} else {
 		$("#usernameRegister").addClass("inputError");
 		$("#passRegister").addClass("inputError");

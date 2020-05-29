@@ -57,12 +57,11 @@ function successRegistred(){
     $('#map-canvas').hide();
     $('#addPosition').show();
     $("body").removeClass('map-custom');
-    var html = '<div class="form"><div id="addDate">';
-    html += '   <div class="divInput"> <h1> Solicitud ingresada exitosamente</h2> <br><br><br><br></div> ';
-    html += '   <div class="divInput"> <h2> Un Accesor se comunicara pronto con usted.</h2> <br><br><br><br></div> ';
-    html += '   <div class="divInput"> <button class="buttonSu" onclick="backMenu()">Continuar</button></div>';
+    var html = '<div id="addDate" class="form">';
+    html += '   <div class="divSuccess"> <h3 style="margin: 0;"> Proceso de Ingreso de Solicitud </h2></div> ';
+    html += '   <div class="div-message"> <p class="p-class"> Su solicitud fue ingresada exitosamente, un Asesor se comunicara pronto con usted.</p><br><br></div> ';
+    html += '   <div> <button class="buttonSu" style="margin: 0;" onclick="backMenu()">Continuar</button></div>';
     html += '   </div>';
-    html += '</div>';
     $('#addPosition').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();"> &larr; Ingreso Exitoso</span>';
     $('#mainMenuQuito').html(menu);

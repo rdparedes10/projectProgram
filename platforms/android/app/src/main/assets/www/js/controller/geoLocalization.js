@@ -54,7 +54,7 @@ function placeMarker(map, location) {
 }
 
 function addmarker(map, marker) {
-	var content = "<div> <p> Agregar Punto de referencias </p>" +
+	var content = "<div class='login-page'> <p> Agregar Punto de referencias </p>" +
 		"<button  onclick='addPositionMarker(this)' id='add-references"+ markers.length + "'>" +
 		"Agregar" +
 		"</button>" +
