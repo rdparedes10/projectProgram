@@ -2,15 +2,7 @@
 var sessionId = '';
 document.addEventListener('deviceready', function () {
 	loadLogin();
-	$('.message a').click(function () {
-		getSessionId();
-		$('.div-login').animate({ height: "toggle", opacity: "toggle" }, "slow");
-	});
-
-	$("#isClient").on( 'change', function() {
-			getTypeInsurance();
-			$('.div-client').animate({ height: "toggle", opacity: "toggle" }, "slow");
-	});
+	beforeLoadLogin();
 });
 
 function loadLogin() {
@@ -132,12 +124,18 @@ function getSessionId() {
 
 function logout(){
 	loadLogin();
+	beforeLoadLogin();
+}
+
+
+function beforeLoadLogin(){
 	$('.message a').click(function () {
 		getSessionId();
 		$('.div-login').animate({ height: "toggle", opacity: "toggle" }, "slow");
 	});
+
 	$("#isClient").on( 'change', function() {
-		getTypeInsurance();
-		$('.div-client').animate({ height: "toggle", opacity: "toggle" }, "slow");
+			getTypeInsurance();
+			$('.div-client').animate({ height: "toggle", opacity: "toggle" }, "slow");
 	});
 }

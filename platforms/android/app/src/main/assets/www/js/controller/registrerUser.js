@@ -34,6 +34,7 @@ function registerValidate(data) {
 	if (data && data.statusInfo.code === '0') {
 		loadLogin();
 		$('.login-form').show();
+		beforeLoadLogin();
 	} else {
 		$("#usernameRegister").addClass("inputError");
 		$("#passRegister").addClass("inputError");
@@ -59,6 +60,7 @@ function takePhoto() {
 	navigator.camera.getPicture(onSuccess, onFail, {
 		quality: 50,
 		destinationType: Camera.DestinationType.DATA_URL,
+		correctOrientation: true,
 	});
 
 }

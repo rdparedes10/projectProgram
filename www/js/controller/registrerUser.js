@@ -60,6 +60,7 @@ function takePhoto() {
 	navigator.camera.getPicture(onSuccess, onFail, {
 		quality: 50,
 		destinationType: Camera.DestinationType.DATA_URL,
+		correctOrientation: true,
 	});
 
 }
