@@ -3,3 +3,4 @@ var loginPath = '/vehicle/login/';
 var registerUser = '/vehicle/registerUser/';
 var registerAccident = '/vehicle/registerAccident/';
 var createSession = '/vehicle/sessionId';
+var getInsurance = '/vehicle/getInsurance';

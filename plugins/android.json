@@ -7,6 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.todo1.puce.seguros"
+    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.todo1.puce.seguros"
     },

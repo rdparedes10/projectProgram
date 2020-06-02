@@ -30,6 +30,18 @@
     font-size: 14px;
 }
 
+.form  label{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
 .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -123,4 +135,12 @@ body {
     background-image: none !important;
     background: rgba(0,0,0,0) none !important;
     background-color: rgba(0,0,0,0) !important;
+}
+
+.form .register-client-form {
+    display: none;
+}
+
+.selector-register{
+    margin: 0 0 15px;
 }
