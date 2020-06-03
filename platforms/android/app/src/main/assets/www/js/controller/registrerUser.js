@@ -17,7 +17,7 @@ function openRegistration() {
 					ci: $("#ciRegister").val(),
 				}
 			};
-			sendPostInfoServices(urlRequest, jsonData, registerValidate);
+			sendPostInfoServices(urlRequest, jsonData, successRegisteredUser);
 		} else {
 			$("#usernameRegister").addClass("inputError");
 			$("#passRegister").addClass("inputError");
@@ -33,7 +33,7 @@ function openRegistration() {
 function registerValidate(data) {
 	if (data && data.statusInfo.code === '0') {
 		loadLogin();
-		$('.login-form').show();
+
 		beforeLoadLogin();
 	} else {
 		$("#usernameRegister").addClass("inputError");
@@ -83,9 +83,9 @@ function onFail(message) {
 
 function getRegisterClient() {
 
-	var validateInput = $('.input-register').toArray().some(function(el) {
-		return $(el).val().length < 1 ;
-	  });
+	var validateInput = $('.input-register').toArray().some(function (el) {
+		return $(el).val().length < 1;
+	});
 	if (!validateInput) {
 		var urlRequest = urlServices + registerUser;
 		var jsonData = {
@@ -97,26 +97,44 @@ function getRegisterClient() {
 				email: $("#emailRegister").val(),
 				ci: $("#ciRegister").val(),
 			},
-			vehicle:{
+			vehicle: {
 				licensePlate: $("#licensePlate").val(),
-				chassis:$("#chassis").val(),
-				manufacturingDate:$("#manufacturingDate").val(),
-				idBrand:$("#idBrand").val(),
-				photo:$("#photo").val(),
+				chassis: $("#chassis").val(),
+				manufacturingDate: $("#manufacturingDate").val(),
+				idBrand: $("#idBrand").val(),
+				photo: $("#photo").val(),
 				idClient: $("#ciRegister").val(),
-				model:$("#model").val(),
+				model: $("#model").val(),
 			},
-			client:{
-				id:$("#ciRegister").val(),
-				name:$("#nameRegister").val(),
-				lastname:$("#lastname").val(),
-				address:$("#address").val(),
-				phone:$("#phone").val(),
-				idInsurance:$("#typeInsurance").val(),
+			client: {
+				id: $("#ciRegister").val(),
+				name: $("#nameRegister").val(),
+				lastname: $("#lastname").val(),
+				address: $("#address").val(),
+				phone: $("#phone").val(),
+				idInsurance: $("#typeInsurance").val(),
 			}
 		};
-		sendPostInfoServices(urlRequest, jsonData, registerValidate);
+		sendPostInfoServices(urlRequest, jsonData, successRegisteredUser);
 	} else {
 		$('#idEr').show();
 	}
+}
+
+
+
+function successRegisteredUser() {
+	$("body").removeClass('map-custom');
+	var html = '<div id="successRegistered" class="form">';
+	html += '   <div class="divSuccess"> <h3 style="margin: 0;"> Proceso de Registro </h2></div> ';
+	html += '   <div class="div-message"> <p class="p-class"> Su Registro se realizó exitosamente.</p><br><br></div> ';
+	html += '   <div> <button class="buttonSu" style="margin: 0;" onclick="successReturnLogin();">Continuar</button></div>';
+	html += '   </div>';
+	$('#login').html(html);
+}
+
+function successReturnLogin() {
+	loadLogin();
+	$('.login-form').show();
+	beforeLoadLogin();
 }

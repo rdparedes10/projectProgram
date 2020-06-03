@@ -132,3 +132,8 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.image-data{
+    border: 5px solid;
+    color: #059;
+}

@@ -19,6 +19,8 @@
 	<script type="text/javascript" src="js/controller/login.js"></script>
 	<script type="text/javascript" src="js/controller/registerAccident.js"></script>
 	<script type="text/javascript" src="js/controller/registrerUser.js"></script>
+	<script type="text/javascript" src="js/controller/consult.data.js"></script>
+	<script type="text/javascript" src="js/controller/contact.js"></script>
 	<script src="js/jquery.mobile-1.4.5/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="js/jquery.mobile-1.4.5/jquery-1.11.1.min.js"></script>
@@ -28,9 +30,9 @@
 <body>
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="#" onclick="showData()">Ver Datos</a>
+		<a href="#" onclick="getUserData();">Ver Datos</a>
 		<a href="#" onclick="addAccident();">Ingresar Siniestro</a>
-		<a href="#" onclick="showContact()">Cont&aacute;ctenos</a>
+		<a href="#" onclick="showContact();">Cont&aacute;ctenos</a>
 		<a href="#" onclick="logout();">Sign Out</a>
 	</div>
 	<div class="menu" id="mainMenuQuito">
@@ -41,6 +43,8 @@
 	</div>
 	<div id="map-canvas"></div>
 	<div id="addPosition" class="login-page"></div>
+	<div id="contact" class="login-page"></div>
+	<div id="user-data" class="login-page"></div>
 	<!-- <div class="loader"></div> -->
 </body>
 

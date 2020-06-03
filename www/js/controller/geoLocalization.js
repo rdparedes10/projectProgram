@@ -19,13 +19,13 @@ function initMap() {
     var menu = '<span class="span-menu" onclick="openNav();">&#9776;Menu Principal</span>';
 	$('#mainMenuQuito').html(menu);
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
 	} else {
 		// Browser doesn't support Geolocation
 		handleLocationError(false, infoWindow, map.getCenter());
 	}
 }
-function onSuccess(position) {
+function onSuccessGeo(position) {
 
 	//Google Maps
 	var myLatlng = { lat: position.coords.latitude, lng: position.coords.longitude };
@@ -41,7 +41,7 @@ function onSuccess(position) {
 	map.animateCamera(mapOptions);
 }
 
-function onError(error) {
+function onErrorGeo(error) {
 	alert('code: ' + error.code + '\n' +
 		'message: ' + error.message + '\n');
 }
@@ -119,10 +119,13 @@ function backMenu() {
 	var menu = '<span class="span-menu" onclick="openNav()">&#9776;Menu Principal</span>';
 	$('#map-canvas').show();
 	$('#addPosition').hide();
+	$('#user-data').hide();
+	$('#contact').hide();
 	$('#mainMenuQuito').html(menu);
 	map.clear();
 	map.setClickable(false);
 	initMapPos();
+	closeNav();
 
 }
 
