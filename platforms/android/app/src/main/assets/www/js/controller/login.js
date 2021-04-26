@@ -130,7 +130,6 @@ function logout(){
 
 function beforeLoadLogin(){
 	$('.message a').click(function () {
-		getSessionId();
 		$('.div-login').animate({ height: "toggle", opacity: "toggle" }, "slow");
 	});
 

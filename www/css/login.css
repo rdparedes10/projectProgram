@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 .login-page {
     width: 360px;
     padding: 8% 0 0;
@@ -30,7 +29,7 @@
     font-size: 14px;
 }
 
-.form  label{
+.form label {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #fff;
@@ -46,7 +45,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4CAF50;
+    background: #141c8b;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -60,7 +59,7 @@
 .form button:hover,
 .form button:active,
 .form button:focus {
-    background: #43A047;
+    background: #3e438f;
 }
 
 .form .message {
@@ -70,7 +69,7 @@
 }
 
 .form .message a {
-    color: #4CAF50;
+    color: #3e438f;
     text-decoration: none;
 }
 
@@ -120,12 +119,12 @@
 }
 
 body {
-    background: #76b852;
+    background: #fff;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-    background: -moz-linear-gradient(right, #76b852, #8DC26F);
-    background: -o-linear-gradient(right, #76b852, #8DC26F);
-    background: linear-gradient(to left, #76b852, #8DC26F);
+    background: -webkit-linear-gradient(right, #fff, #fff);
+    background: -moz-linear-gradient(right, #fff, #fff);
+    background: -o-linear-gradient(right, #fff, #fff);
+    background: linear-gradient(to left, #fff, #fff);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -133,19 +132,19 @@ body {
 
 .map-custom {
     background-image: none !important;
-    background: rgba(0,0,0,0) none !important;
-    background-color: rgba(0,0,0,0) !important;
+    background: rgba(0, 0, 0, 0) none !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .form .register-client-form {
     display: none;
 }
 
-.selector-register{
+.selector-register {
     margin: 0 0 15px;
 }
 
-.form-data{
+.form-data {
     position: relative;
     z-index: 1;
     background: #FFFFFF;

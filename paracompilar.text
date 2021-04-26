@@ -20,4 +20,4 @@ mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=n,addre
 
 mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8787"
 
-srccpy
+scrcpy
