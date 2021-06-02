@@ -23,10 +23,16 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/loader.css">
+    <link rel="stylesheet" type="text/css" href="css/componetStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/tableStyle.css">
+    
     <script type="text/javascript" src="js/utils/styles.js"></script>
     <script type="text/javascript" src="js/libs/rsa.js"></script>
     <script type="text/javascript" src="js/utils/utils.js"></script>
     <script type="text/javascript" src="js/utils/utilsViews.js"></script>
+    <script type="text/javascript" src="js/utils/utilsDataJson.js"></script>
+
+    
 
     <script type="text/javascript" src="js/utils/environment.js"></script>
 
@@ -86,19 +92,19 @@
         </div>
         <a href="#" class="files" onclick="openNavSub('mySidenav2');">Fichas</a>
         <div id="mySidenav2" class="sidenav-sub hide-page">
-            <a href="#" class="filesInserts" onclick="getUserData();">Ingresar Datos de Ficha</a>
+            <a href="#" class="filesInserts" onclick="loadInsertFile();">Ingresar Datos de Ficha</a>
             <a href="#" class="filesUpdates" onclick="getUserData();">Modificar Datos de Ficha</a>
             <a href="#" class="filesCancelled" onclick="getUserData();">Anulación Ficha</a>
         </div>
         <a href="#" class="users" onclick="openNavSub('mySidenav3');">Usuarios</a>
         <div id="mySidenav3" class="sidenav-sub hide-page">
-            <a href="#" class="usersInserts" onclick="getUserData();">Ingresar Datos de Usuario</a>
+            <a href="#" class="usersInserts" onclick="loadRegisterUser();">Ingresar Datos de Usuario</a>
             <a href="#" class="usersUpdates" onclick="getUserData();">Modificar Datos de Usuario</a>
             <a href="#" class="usersDeletes" onclick="getUserData();">Eliminar Usuario</a>
         </div>
         <a href="#" class="queries" onclick="openNavSub('mySidenav4');">Consultas</a>
         <div id="mySidenav4" class="sidenav-sub hide-page">
-            <a href="#" class="queriesClients" onclick="getUserData();">Clientes</a>
+            <a href="#" class="queriesClients" onclick="loadConsultClient();">Clientes</a>
             <a href="#" class="queriesFile" onclick="getUserData();">Fichas</a>
             <a href="#" class="queriesUser" onclick="getUserData();">Usuarios</a>
         </div>

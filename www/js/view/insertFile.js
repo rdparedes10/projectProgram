@@ -1,36 +1,27 @@
-function loadInsertFiles() {
+function loadInsertFile() {
     closeNav();
     $("#mySidenav").hide();
-    $('#login').show();
-    hideAllMenu('login');
+    $('#insertFile').show();
+    hideAllMenu('insertFile');
 
-    var html = '<div id="idErClient"class="divInput errorSt" style="display: none;">Verifique los datos ingresados<br><br></div>' +
-        '<div class="login-page">' +
-            '<div class="form">' +
-                '<div class="div-login login-form">' +
-                    '<input type="text"  id="clientName"  placeholder="Nombre del Cliente"/>' +
-                    '<input type="text"  id="ruc"  placeholder="RUC o Cédula"/>' +
-                    '<input type="text"  id="clientAddress"  placeholder="Dirección del cliente"/>' +
-                    '<input type="text"  id="phone"  placeholder="Número de telefono"/>' +
-                    '<input type="text"  id="mobile"  placeholder="Número de celular"/>' +
-                    '<input type="text"  id="email"  placeholder="Email del cliente"/>' +
-                    '<label>Envío por email</label><input type="checkbox"  id="isEmailSend"/>' +
-                    '<button id="buttonI" onclick="sendInfoLogin()">login</button>' +
-                ' </div>' +
-            ' </div>' +
-        '</div>';
-
-    $('#login').html(html);
-    var menu = '<span class="span-menu">Sign In</span>';
+    var html = getListClient();
+    html += addInputsInViewsInsert('file_data');
+    $('#insertFile').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr;  Ingreso de Fichas</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
+    addEventsInputsInsert('file_data');
 
-    $('#username').on('input', function(a) {
-        $("#username").removeClass("inputError");
-        $('#idEr').hide();
-    });
-    $('#pass').on('input', function(a) {
-        $("#pass").removeClass("inputError");
-        $('#idEr').hide();
-    });
+}
+
+function getListClient(){
+    var listClient = '<div class="divSelect"> <label> Seleccione el cliente :  </label>' +
+    '<select class="formSelect" name="selectClient" id="selectClient">'+
+      '<option value="volvo">Volvo </option>'+
+      '<option value="saab">Saab </option>'+
+      '<option value="opel">Opel </option>'+
+      '<option value="audi">Audi </option>'+
+    '</select>'+
+    '</div>';
+    return listClient;
 }

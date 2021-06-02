@@ -156,3 +156,20 @@ body {
     display: block;
     transition: 0.3s;
 }
+
+.divSelect {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+} 
+.formSelect {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-size: 14px;
+    margin: 15px;
+    border: 0;
+    font-family: "Roboto", sans-serif;
+}

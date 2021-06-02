@@ -9,7 +9,7 @@ function insertClient(data){
                 }else{
                     jsonData[value.id] = $('#'+ value.id).val();
                 }
-            }else {
+            } else {
                 $('#'+ value.id).val('');
                 $('#'+ value.id).css('border', '2px solid rgb(185, 20, 20)');
                 $('#idEr').show();
