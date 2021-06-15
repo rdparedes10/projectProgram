@@ -2,7 +2,7 @@ function getInputData(){
     var data = {
         'clients_data': [
             {
-                'id': 'clientName',
+                'id': 'name',
                 'placeholder': 'Nombre del Cliente',
                 'type': 'text',
                 'type_tag': 'input'
@@ -14,7 +14,7 @@ function getInputData(){
                 'type_tag': 'input'
             },
             {
-                'id': 'clientAddress',
+                'id': 'address',
                 'placeholder': 'Dirección del cliente',
                 'type': 'text',
                 'type_tag': 'input'
@@ -45,7 +45,7 @@ function getInputData(){
                 'style': 'width:50%;'
             },
             {
-                'id': 'isEmailSend',
+                'id': 'sendEmail',
                 'type': 'checkbox',
                 'type_tag': 'input',
                 'placeholder': 'Envio de correo',
@@ -79,13 +79,13 @@ function getInputData(){
                 'type_tag': 'input'
             },
             {
-                'id': 'date_elaboration',
+                'id': 'dateElaboration',
                 'placeholder': 'Fecha de Elaboración',
                 'type': 'date',
                 'type_tag': 'input'
             },
             {
-                'id': 'date_due',
+                'id': 'dueDate',
                 'placeholder': 'Fecha de caducidad',
                 'type': 'date',
                 'type_tag': 'input'
@@ -115,19 +115,19 @@ function getInputData(){
                 'type_tag': 'input'
             },
             {
-                'id': 'n_sample',
+                'id': 'nSample',
                 'placeholder': 'Número de muestras',
                 'type': 'text',
                 'type_tag': 'input'
             },
             {
                 'id': 'temperature',
-                'placeholder': 'Temperatura de la o las muestras',
+                'placeholder': 'Temperatura de las muestras',
                 'type': 'text',
                 'type_tag': 'input'
             },
             {
-                'id': 'comentary',
+                'id': 'commentary',
                 'placeholder': 'Comentario',
                 'type': 'text',
                 'type_tag': 'input'

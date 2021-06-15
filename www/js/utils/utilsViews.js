@@ -13,7 +13,9 @@ function hideAllMenu(menu) {
         "updateUser",
         "insertClient",
         "updateClient",
-        "deleteClient"
+        "deleteClient",
+        "authorizeFile",
+        "authorizeSamples"
     ];
 
     views.forEach(function(elemento, indice, array) {
@@ -99,4 +101,16 @@ function callBacks(functionName, data){
     };
     default:
     }
+}
+
+function getSuccessView(text_success){ 
+    var html = '<div class="form"><div class="card"> ';
+    html += '    <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">';
+    html += '  <i class="checkmark i_success">✓</i></div>';
+    html += '   <h1 class="h1_success">Success</h1> ';
+    html += '   <p class="p_success">'+ text_success + '</p>';
+    html += '   </div>';
+    html += '  <button class="form button" onclick="loadMenu()">Continuar</button></div>';
+
+    return html;
 }

@@ -1,13 +1,19 @@
 function insertClient(data){
-    var jsonData = {};
+    var jsonData = {
+        sessionId: sessionId,
+        user: {
+            user: $("#username").val(),
+        },
+        client:{}
+    };
     var flag_validate = true; 
     $.each(data, function(key,value) {
         if(value.type_tag === 'input'){
             if(($('#'+ value.id).val() !=='' && $('#'+ value.id).val() !== null) ){
                 if(value.type === 'checkbox'){
-                    jsonData[value.id] = $('#'+ value.id).is(':checked')? 'true': 'false';
+                    jsonData.client[value.id] = $('#'+ value.id).is(':checked')? 'true': 'false';
                 }else{
-                    jsonData[value.id] = $('#'+ value.id).val();
+                    jsonData.client[value.id] = $('#'+ value.id).val();
                 }
             } else {
                 $('#'+ value.id).val('');
@@ -23,6 +29,15 @@ function insertClient(data){
 }
 
 function sendJsonClient(jsonData){
+    var urlRequest = urlServices + insertClientPath;
+    sendPostInfoServices(urlRequest, jsonData, succesInsertClientView);
+}
 
-    sendPostInfoServices(urlRequest, jsonData, signInValidate);
+
+function succesInsertClientView(data){
+    if (data && data.statusInfo.code === '0') {
+        loadSuccessClients();
+    } else {
+        alert("Error");
+    }
 }

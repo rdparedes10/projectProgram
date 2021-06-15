@@ -25,12 +25,16 @@
     <link rel="stylesheet" type="text/css" href="css/loader.css">
     <link rel="stylesheet" type="text/css" href="css/componetStyle.css">
     <link rel="stylesheet" type="text/css" href="css/tableStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/succes_style.css">
+    
     
     <script type="text/javascript" src="js/utils/styles.js"></script>
     <script type="text/javascript" src="js/libs/rsa.js"></script>
     <script type="text/javascript" src="js/utils/utils.js"></script>
     <script type="text/javascript" src="js/utils/utilsViews.js"></script>
     <script type="text/javascript" src="js/utils/utilsDataJson.js"></script>
+
+    
 
     
 
@@ -49,7 +53,10 @@
     <script type="text/javascript" src="js/controller/updateUser.js"></script>
     <script type="text/javascript" src="js/controller/updateClient.js"></script>
     <script type="text/javascript" src="js/controller/insertClient.js"></script>
-
+    <script type="text/javascript" src="js/controller/authorizeFile.js"></script>
+    <script type="text/javascript" src="js/controller/authorizeSamples.js"></script>
+    <script type="text/javascript" src="js/controller/contact.js"></script>
+    <script type="text/javascript" src="js/controller/loadData.js"></script>
 
     <script type="text/javascript" src="js/view/anulationFile.js"></script>
     <script type="text/javascript" src="js/view/consultClient.js"></script>
@@ -65,6 +72,8 @@
     <script type="text/javascript" src="js/view/registerUser.js"></script>
     <script type="text/javascript" src="js/view/updateFile.js"></script>
     <script type="text/javascript" src="js/view/updateUser.js"></script>
+    <script type="text/javascript" src="js/view/authorizeFile.js"></script>
+    <script type="text/javascript" src="js/view/authorizeSamples.js"></script>
 
 
     <script src="js/jquery.mobile-1.4.5/jquery-1.11.1.min.js"></script>
@@ -81,32 +90,32 @@
         <br/>
         <a href="#" class="authorize" onclick="openNavSub('mySidenav0');">Autorizaciones</a>
         <div id="mySidenav0" class="sidenav-sub hide-page">
-            <a href="#" class="authorizeSamples" onclick="getUserData();">Autorizaciones de muestras</a>
-            <a href="#" class="authorizeFiles" onclick="getUserData();">Autorizaciones de Fichas</a>
+            <a href="#" class="authorizeSamples" onclick="loadAuthorizeSamples();">Autorizaciones de muestras</a>
+            <a href="#" class="authorizeFiles" onclick="loadAuthorizeFile();">Autorizaciones de Fichas</a>
         </div>
         <a href="#" class="clients" onclick="openNavSub('mySidenav1');">Clientes</a>
         <div id="mySidenav1" class="sidenav-sub hide-page">
             <a href="#" class="clientsInserts" onclick="loadInsertClient();">Ingresar Datos de Cliente</a>
-            <a href="#" class="clientsUpdates" onclick="getUserData();">Modificar Datos de Cliente</a>
-            <a href="#" class="clientsDeleted" onclick="getUserData();">Eliminar Cliente</a>
+            <a href="#" class="clientsUpdates" onclick="loadUpdateClient();">Modificar Datos de Cliente</a>
+            <a href="#" class="clientsDeleted" onclick="loadClientsDeleted();">Eliminar Cliente</a>
         </div>
         <a href="#" class="files" onclick="openNavSub('mySidenav2');">Fichas</a>
         <div id="mySidenav2" class="sidenav-sub hide-page">
-            <a href="#" class="filesInserts" onclick="loadInsertFile();">Ingresar Datos de Ficha</a>
-            <a href="#" class="filesUpdates" onclick="getUserData();">Modificar Datos de Ficha</a>
-            <a href="#" class="filesCancelled" onclick="getUserData();">Anulación Ficha</a>
+            <a href="#" class="filesInserts" onclick="loadAllClients();">Ingresar Datos de Ficha</a>
+            <a href="#" class="filesUpdates" onclick="loadUpdateFile();">Modificar Datos de Ficha</a>
+            <a href="#" class="anulationFile" onclick="loadAnulationFile();">Anulación Ficha</a>
         </div>
         <a href="#" class="users" onclick="openNavSub('mySidenav3');">Usuarios</a>
         <div id="mySidenav3" class="sidenav-sub hide-page">
             <a href="#" class="usersInserts" onclick="loadRegisterUser();">Ingresar Datos de Usuario</a>
-            <a href="#" class="usersUpdates" onclick="getUserData();">Modificar Datos de Usuario</a>
-            <a href="#" class="usersDeletes" onclick="getUserData();">Eliminar Usuario</a>
+            <a href="#" class="usersUpdates" onclick="loadUpdateUser();">Modificar Datos de Usuario</a>
+            <a href="#" class="usersDeletes" onclick="loadDeleteUser();">Eliminar Usuario</a>
         </div>
         <a href="#" class="queries" onclick="openNavSub('mySidenav4');">Consultas</a>
         <div id="mySidenav4" class="sidenav-sub hide-page">
             <a href="#" class="queriesClients" onclick="loadConsultClient();">Clientes</a>
-            <a href="#" class="queriesFile" onclick="getUserData();">Fichas</a>
-            <a href="#" class="queriesUser" onclick="getUserData();">Usuarios</a>
+            <a href="#" class="queriesFile" onclick="loadConsultFile();">Fichas</a>
+            <a href="#" class="queriesUser" onclick="loadConsultDataUser();">Usuarios</a>
         </div>
         <a href="#" onclick="showContact();">Cont&aacute;ctenos</a>
         <a href="#" onclick="logout();">Sign Out</a>
@@ -115,7 +124,7 @@
         <span class="span-menu" onclick="openNav()">&#9776;
 			Menu Principal</span>
     </div>
-    <div id="idEr"class="divInput errorSt" style="display: none;">Verifique los datos ingresados<br><br></div>
+    <div id="idEr"class="divInput errorSt" style="display: none;"> Verifique los datos ingresados<br><br></div>
     <div class="login-page" id="login"></div>
 
     <div id="contact" class="login-page hide-page"></div>
@@ -133,6 +142,8 @@
     <div id="registerUser" class="login-page hide-page"></div>
     <div id="updateFile" class="login-page hide-page"></div>
     <div id="updateUser" class="login-page hide-page"></div>
+    <div id="authorizeSamples" class="login-page hide-page"></div>
+    <div id="authorizeFile" class="login-page hide-page"></div>
 </body>
 
 </html>

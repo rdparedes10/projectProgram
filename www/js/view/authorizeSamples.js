@@ -1,18 +1,18 @@
-function loadUpdateClient(){
+function loadAuthorizeSamples(){
     closeNav();
     $("#mySidenav").hide();
-    $('#updateClient').show();
-    hideAllMenu('updateClient');
+    $('#authorizeSamples').show();
+    hideAllMenu('authorizeSamples');
     
-    var html = getClients();
-    $('#updateClient').html(html);
+    var html = getUser();
+    $('#authorizeSamples').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consulta Clientes</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
     // addEventsInputsInsert('clients_data');
 }
 
-function getClients(){
+function getUser(){
     var html = '<table class="table_client">' +
     '<tr>' 
         +'<th>Firstname</th>'
