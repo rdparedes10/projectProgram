@@ -27,3 +27,28 @@ function loadAllFiles(){
 function loadFileWithParams(params){
 
 }
+
+
+function getFileCancelled(data){
+    var jsonData = {
+        sessionId: sessionId,
+        user: {
+            user: $("#username").val(),
+        },
+        cancelled: data,
+    };
+    sendJsonCancelledFile(jsonData);
+}
+
+function sendJsonCancelledFile(jsonData){
+ var urlRequest = urlServices + getFilesCancelledPath;
+    sendPostInfoServices(urlRequest, jsonData, successCancelledFilesView);
+}
+
+function successCancelledFilesView(data){
+    if (data && data.statusInfo.code === '0') {
+        loadCancelledtFile(data.params);    
+    } else {
+        alert("Error");
+    }
+}
