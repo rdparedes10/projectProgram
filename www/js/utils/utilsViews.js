@@ -116,7 +116,7 @@ function getSuccessView(text_success){
 }
 
 
-function addUpdateInViewsInsert(view){
+function addUpdateInViewsInsert(view, data){
     var data = getInputData();
     var html ='<div class="login-page">' +
         '<div class="form">' +
@@ -125,7 +125,7 @@ function addUpdateInViewsInsert(view){
 
         switch(value.type_tag){
             case 'input' : {
-                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + '/>' ;
+                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + 'value='+ v+ '/>' ;
                 break;
             };
             case 'button':{
