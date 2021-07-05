@@ -13,7 +13,7 @@ setTimeout(function() {
 function loadLogin() {
     sessionId = '';
     closeNav();
-    getSessionId();
+    clearSession();
     $("#mySidenav").hide();
     $('#login').show();
     hideAllMenu('login');
@@ -23,7 +23,7 @@ function loadLogin() {
         '<div class="div-login login-form">' +
         '<input type="text"  id="username"  placeholder="username"/>' +
         '<input type="password"   id="pass" placeholder="password"/>' +
-        '<button id="buttonI" onclick="sendInfoLogin()">login</button>' +
+        '<button id="buttonI" onclick="getSessionId()">login</button>' +
         ' </div>' +
         ' </div>' +
         '</div>';

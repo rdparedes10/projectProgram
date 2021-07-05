@@ -44,7 +44,7 @@ function addInputsInViewsInsert(view){
 
         switch(value.type_tag){
             case 'input' : {
-                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder=' + value.placeholder + ' ' + (value.style? ' style=' + value.style : "") + '/>' ;
+                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + '/>' ;
                 break;
             };
             case 'button':{
@@ -112,5 +112,31 @@ function getSuccessView(text_success){
     html += '   </div>';
     html += '  <button class="form button" onclick="loadMenu()">Continuar</button></div>';
 
+    return html;
+}
+
+
+function addUpdateInViewsInsert(view){
+    var data = getInputData();
+    var html ='<div class="login-page">' +
+        '<div class="form">' +
+            '<div class="div-login login-form">';
+    $.each(data[view], function(key,value) {
+
+        switch(value.type_tag){
+            case 'input' : {
+                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + '/>' ;
+                break;
+            };
+            case 'button':{
+                html +='<'+ value.type_tag + ' id='+ value.id + ' ' + (value.style? ' style=' + value.style : "") +' >'+ value.placeholder + '</' + value.type_tag + '>' ;
+                break; 
+            };
+            default : {
+                html +='<'+ value.type_tag + ' id='+ value.id + ' ' +(value.style? ' style=' + value.style : "") + '>' + value.placeholder + '</' + value.type_tag + '>' ;
+                break;
+            }
+        }
+    });
     return html;
 }

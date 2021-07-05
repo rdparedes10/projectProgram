@@ -1,7 +1,6 @@
 var sessionId = '';
 
 function sendInfoLogin() {
-
     if ($("#username").val() && $("#pass").val()) {
         var urlRequest = urlServices + loginPath;
         var jsonData = {
@@ -37,6 +36,7 @@ function getSessionId() {
     var urlRequest = urlServices + createSession;
     sendGetInfoServices(urlRequest, function(data) {
         sessionId = data.params.sessionId;
+        sendInfoLogin();
     });
 }
 

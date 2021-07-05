@@ -17,4 +17,6 @@ var insertFilesPath = '/puce/insertFiles';
 var updateFilesPath = '/puce/updateFiles';
 var deleteFilesPath = '/puce/deleteFiles';
 var getFilesAllPath = '/puce/getFilesAll';
-var getFilesCancelledPath = '/puce/cancelledFiles';
+var getFilesCancelledPath = '/puce/getFileCancelled';
+var cancelledFilePath = '/puce/cancelledFiles';
+

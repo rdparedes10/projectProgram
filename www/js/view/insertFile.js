@@ -29,8 +29,6 @@ function getListClient(clients){
     return listClient;
 }
 
-
-
 function loadSuccessFiles() {
     closeNav();
     $("#mySidenav").hide();

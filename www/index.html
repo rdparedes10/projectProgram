@@ -74,7 +74,7 @@
     <script type="text/javascript" src="js/view/updateUser.js"></script>
     <script type="text/javascript" src="js/view/authorizeFile.js"></script>
     <script type="text/javascript" src="js/view/authorizeSamples.js"></script>
-
+    <script type="text/javascript" src="js/beans/beansSession.js"></script>
 
     <script src="js/jquery.mobile-1.4.5/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
@@ -96,7 +96,7 @@
         <a href="#" class="clients" onclick="openNavSub('mySidenav1');">Clientes</a>
         <div id="mySidenav1" class="sidenav-sub hide-page">
             <a href="#" class="clientsInserts" onclick="loadInsertClient();">Ingresar Datos de Cliente</a>
-            <a href="#" class="clientsUpdates" onclick="loadUpdateClient();">Modificar Datos de Cliente</a>
+            <a href="#" class="clientsUpdates" onclick="loadUpdateClientData();">Modificar Datos de Cliente</a>
             <a href="#" class="clientsDeleted" onclick="loadClientsDeleted();">Eliminar Cliente</a>
         </div>
         <a href="#" class="files" onclick="openNavSub('mySidenav2');">Fichas</a>
@@ -120,7 +120,7 @@
         <a href="#" onclick="showContact();">Cont&aacute;ctenos</a>
         <a href="#" onclick="logout();">Sign Out</a>
     </div>
-    <div class="menu hide-page" id="mainMenuQuito">
+    <div class="menu hide-page menu2" id="mainMenuQuito">
         <span class="span-menu" onclick="openNav()">&#9776;
 			Menu Principal</span>
     </div>

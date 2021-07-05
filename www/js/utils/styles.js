@@ -22,5 +22,4 @@ function openNavSub(menu) {
     } else {
         $(subMenu).hide();
     }
-
 }

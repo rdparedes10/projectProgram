@@ -52,3 +52,14 @@ function successCancelledFilesView(data){
         alert("Error");
     }
 }
+
+function loadUpdateClientData(){
+    var rqClients ={
+        sessionId: sessionId,
+        user: {
+            user: $("#username").val(),
+        },
+    }
+    var urlRequest = urlServices + getClientAllPath;
+    sendPostInfoServices(urlRequest, rqClients, loadUpdateClient);
+}

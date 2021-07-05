@@ -1,10 +1,11 @@
-function loadUpdateClient(){
+function loadUpdateClient(data){
     closeNav();
     $("#mySidenav").hide();
     $('#updateClient').show();
     hideAllMenu('updateClient');
     
-    var html = getClients();
+    var html = getClientsUpdate(data.params);
+    fileAndClients = data.params;
     $('#updateClient').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consulta Clientes</span>';
     $('#mainMenuQuito').html(menu);
@@ -12,28 +13,28 @@ function loadUpdateClient(){
     // addEventsInputsInsert('clients_data');
 }
 
-function getClients(){
+function getClientsUpdate(data){
+    var valuesTb = "";
+    $.each(data, function(key,value) {
+        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableAnulation(this)" >'
+        valuesTb += '<td >' + value.ruc + '</td>';
+        valuesTb += '<td >' + value.name + '</td>';
+        valuesTb += '<td>' +value.date + '</td>';
+        valuesTb += '<td>' +value.email + '</td>';
+        valuesTb += '<td>' +value.phone + '</td>';
+        valuesTb += '<td>' +value.mobile + '</td>';
+        valuesTb += ' </tr>';
+    });
     var html = '<table class="table_client">' +
-    '<tr>' 
-        +'<th>Firstname</th>'
-        +'<th>Lastname</th> '
-        +'<th>Age</th>'
+    ' <tr>'
+        +'<th>RUC</th>'
+        +'<th>Cliente</th>'
+        +'<th>Fecha de Registro</th>'
+        +'<th>Email</th>'
+        +'<th>Telefono</th>'
+        +'<th>Celular</th>'
     +' </tr>'
-    +' <tr>'
-        +'<td>Jill</td>'
-        +'<td>Smith</td>'
-        +'<td>50</td>'
-    +' </tr>'
-    +' <tr>'
-        +'<td>Eve</td>'
-        +'<td>Jackson</td>'
-        +'<td>94</td>'
-    +'</tr>'
-    +'<tr>'
-        +'<td>John</td>'
-        +'<td>Doe</td>'
-        +'<td>80</td>'
-    +'</tr>'
+    + valuesTb
     +'</table>';
-return html;
+    return html;
 }
