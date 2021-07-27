@@ -2,7 +2,7 @@ function loadAllClients(){
     var rqClients ={
         sessionId: sessionId,
         user: {
-            user: $("#username").val(),
+            userName: $("#username").val(),
         },
     }
     var urlRequest = urlServices + getClientAllPath;
@@ -33,7 +33,7 @@ function getFileCancelled(data){
     var jsonData = {
         sessionId: sessionId,
         user: {
-            user: $("#username").val(),
+            userName: $("#username").val(),
         },
         cancelled: data,
     };
@@ -57,9 +57,49 @@ function loadUpdateClientData(){
     var rqClients ={
         sessionId: sessionId,
         user: {
-            user: $("#username").val(),
+            userName: $("#username").val(),
         },
     }
     var urlRequest = urlServices + getClientAllPath;
     sendPostInfoServices(urlRequest, rqClients, loadUpdateClient);
+}
+
+function loadUpdateFileData(){
+    var rqClients ={
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+    }
+    var urlRequest = urlServices + getFilesAllPath;
+    sendPostInfoServices(urlRequest, rqClients, loadUpdateFiles);
+}
+
+
+function loadAllProfiles(profileId){
+    var rqClients ={
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+    }
+    var urlRequest = urlServices + getProfileAllPath;
+    sendPostInfoServices(urlRequest, rqClients, function(data){
+        getProfile(data, profileId);
+    });
+}
+
+function getUserData() {
+    var urlRequest = urlServices + getUserAll;
+    var jsonData = {
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+    };
+    sendPostInfoServices(urlRequest, jsonData, function(data) {
+        if (data && data.statusInfo.code === '0') {
+            loadUpdateUser(data);
+        }
+    });
 }

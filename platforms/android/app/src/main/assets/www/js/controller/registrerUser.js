@@ -11,7 +11,7 @@ function openRegistration() {
 				sessionId: sessionId,
 				validateCl: true,
 				user: {
-					user: $("#usernameRegister").val(),
+					userName: $("#usernameRegister").val(),
 					pass: encryptionText($("#passRegister").val()),
 					email: $("#emailRegister").val(),
 					ci: $("#ciRegister").val(),

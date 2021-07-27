@@ -44,7 +44,11 @@ function addInputsInViewsInsert(view){
 
         switch(value.type_tag){
             case 'input' : {
+                if( value.type !== 'checkbox'){
+                    html += '<label>' + value.placeholder + '</label>';
+                }
                 html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + '/>' ;
+                html += '<br>';
                 break;
             };
             case 'button':{
@@ -99,6 +103,10 @@ function callBacks(functionName, data){
         insertFile(data);
         break;
     };
+    case 'registerUser':{
+        insertUser(data);
+        break;
+    }
     default:
     }
 }
@@ -116,7 +124,7 @@ function getSuccessView(text_success){
 }
 
 
-function addUpdateInViewsInsert(view, data){
+function addUpdateInViewsInsert(view, valueData, buttonId){
     var data = getInputData();
     var html ='<div class="login-page">' +
         '<div class="form">' +
@@ -125,11 +133,15 @@ function addUpdateInViewsInsert(view, data){
 
         switch(value.type_tag){
             case 'input' : {
-                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + 'value='+ v+ '/>' ;
+                if( value.type !== 'checkbox'){
+                    html += '<label>' + value.placeholder + '</label>';
+                }
+                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + 'value='+ (valueData[value.id]? valueData[value.id]: '""') + ' />' ;
+                html += '<br>';  
                 break;
             };
             case 'button':{
-                html +='<'+ value.type_tag + ' id='+ value.id + ' ' + (value.style? ' style=' + value.style : "") +' >'+ value.placeholder + '</' + value.type_tag + '>' ;
+                html +='<'+ value.type_tag + ' id='+ buttonId + ' ' + (value.style? ' style=' + value.style : "") +' >'+ value.placeholder + '</' + value.type_tag + '>' ;
                 break; 
             };
             default : {

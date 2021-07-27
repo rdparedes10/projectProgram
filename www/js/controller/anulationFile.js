@@ -32,7 +32,7 @@ function cancelledFile() {
     var jsonData = {
         sessionId: sessionId,
         user: {
-            user: $("#username").val(),
+            userName: $("#username").val(),
         },
         file:{
             "id": file.id,

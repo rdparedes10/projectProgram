@@ -2,7 +2,7 @@ function insertClient(data){
     var jsonData = {
         sessionId: sessionId,
         user: {
-            user: $("#username").val(),
+            userName: $("#username").val(),
         },
         client:{}
     };

@@ -7,7 +7,7 @@ function loadUpdateClient(data){
     var html = getClientsUpdate(data.params);
     fileAndClients = data.params;
     $('#updateClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consulta Clientes</span>';
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualización de datos de Cliente</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
     // addEventsInputsInsert('clients_data');
@@ -16,7 +16,7 @@ function loadUpdateClient(data){
 function getClientsUpdate(data){
     var valuesTb = "";
     $.each(data, function(key,value) {
-        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableAnulation(this)" >'
+        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableUpdateClient(this)" >'
         valuesTb += '<td >' + value.ruc + '</td>';
         valuesTb += '<td >' + value.name + '</td>';
         valuesTb += '<td>' +value.date + '</td>';
@@ -37,4 +37,17 @@ function getClientsUpdate(data){
     + valuesTb
     +'</table>';
     return html;
+}
+
+function loadSuccessUpdateClient() {
+    closeNav();
+    $("#mySidenav").hide();
+    $('#updateClient').show();
+    hideAllMenu('updateClient');
+
+    var html = getSuccessView('Actualización de los Datos del Cliente Exitoso');
+    $('#updateClient').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualización de datos de Cliente</span>';
+    $('#mainMenuQuito').html(menu);
+    $('#mainMenuQuito').removeClass("hide-page")
 }

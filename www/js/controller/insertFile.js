@@ -2,7 +2,7 @@ function insertFile(data){
     var jsonData = {
         sessionId: sessionId,
         user: {
-            user: $("#username").val(),
+            userName: $("#username").val(),
         },
         client: {
             ruc: $( "#selectClient" ).val(),

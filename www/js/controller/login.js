@@ -1,21 +1,21 @@
 var sessionId = '';
 
 function sendInfoLogin() {
-    if ($("#username").val() && $("#pass").val()) {
+    if ($("#username").val() && $("#passLogin").val()) {
         var urlRequest = urlServices + loginPath;
         var jsonData = {
             sessionId: sessionId,
             user: {
-                user: $("#username").val(),
-                pass: encryptionText($("#pass").val()),
+                userName: $("#username").val(),
+                pass: encryptionText($("#passLogin").val()),
             }
         };
         sendPostInfoServices(urlRequest, jsonData, signInValidate);
     } else {
         $("#username").val('');
-        $("#pass").val('');
+        $("#passLogin").val('');
         $("#username").addClass("inputError");
-        $("#pass").addClass("inputError");
+        $("#passLogin").addClass("inputError");
         $('#idEr').show();
     }
 
@@ -26,7 +26,7 @@ function signInValidate(data) {
         loadMenu();
     } else {
         $("#username").addClass("inputError");
-        $("#pass").addClass("inputError");
+        $("#passLogin").addClass("inputError");
         $('#idEr').show();
     }
 

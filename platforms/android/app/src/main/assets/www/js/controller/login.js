@@ -90,7 +90,7 @@ function sendInfoLogin() {
 		var jsonData = {
 			sessionId: sessionId,
 			user: {
-				user: $("#username").val(),
+				userName: $("#username").val(),
 				pass: encryptionText($("#pass").val()),
 			}
 		};

@@ -22,7 +22,7 @@ function loadLogin() {
         '<div class="form">' +
         '<div class="div-login login-form">' +
         '<input type="text"  id="username"  placeholder="username"/>' +
-        '<input type="password"   id="pass" placeholder="password"/>' +
+        '<input type="password"   id="passLogin" placeholder="password"/>' +
         '<button id="buttonI" onclick="getSessionId()">login</button>' +
         ' </div>' +
         ' </div>' +
@@ -37,8 +37,8 @@ function loadLogin() {
         $("#username").removeClass("inputError");
         $('#idEr').hide();
     });
-    $('#pass').on('input', function(a) {
-        $("#pass").removeClass("inputError");
+    $('#passLogin').on('input', function(a) {
+        $("#passLogin").removeClass("inputError");
         $('#idEr').hide();
     });
 }

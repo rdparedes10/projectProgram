@@ -142,7 +142,7 @@ function getInputData(){
         ],
         'user_data': [
             {
-                'id': 'username',
+                'id': 'userName',
                 'placeholder': 'User Name',
                 'type': 'text',
                 'type_tag': 'input'
@@ -150,7 +150,7 @@ function getInputData(){
             {
                 'id': 'pass',
                 'placeholder': 'Password',
-                'type': 'pass',
+                'type': 'password',
                 'type_tag': 'input'
             },
             {
