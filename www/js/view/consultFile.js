@@ -39,7 +39,7 @@ function getFilesAuthorized(data){
 return html;
 }
 
-function loadSuccessAuthorized() {
+function loadSuccessConsultFile() {
     closeNav();
     $("#mySidenav").hide();
     $('#consultFile').show();

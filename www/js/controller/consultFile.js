@@ -23,18 +23,18 @@ function searchFile(data){
         }
     });
     if(flag_validate){
-        sendJsonFile(jsonData);
+        sendJsonSearchFile(jsonData);
     }
 }
 
 function sendJsonSearchFile(jsonData){
- var urlRequest = urlServices + insertFilesPath;
+ var urlRequest = urlServices + searchFilePath;
     sendPostInfoServices(urlRequest, jsonData, successSearchFileView);
 }
 
 function successSearchFileView(data){
-    if (data && data.statusInfo.code === '0') {
-        loadSuccessFiles();
+    if (data && data.statusInfo.code === '0' && data.params !=null) {
+        loadSuccessConsultFile(data);
     } else {
         alert("Error");
     }
