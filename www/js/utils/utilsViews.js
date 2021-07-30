@@ -106,6 +106,10 @@ function callBacks(functionName, data){
     case 'registerUser':{
         insertUser(data);
         break;
+    };
+    case 'searchFile':{
+        searchFile(data);
+        break;
     }
     default:
     }

@@ -9,7 +9,7 @@ function onClickTableUpdateUser(userId){
     var html = addUpdateInViewsInsert('user_data', user, 'buttonUpdateUser');
     loadAllProfiles(user.role);
     $('#updateUser').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualizacion de datos de Ficha</span>';
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualización de datos de Usuario</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
     addEventsInputsInsert('user_data');

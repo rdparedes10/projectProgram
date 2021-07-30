@@ -19,5 +19,11 @@ var updateFilesPath = '/puce/updateFiles';
 var deleteFilesPath = '/puce/deleteFiles';
 var getFilesAllPath = '/puce/getFilesAll';
 
+var getAuthorizedFiles = '/puce/getAuthorizedFiles';
+var authorizeFilePath = '/puce/authorizedFiles';
+var getApprovedFiles = '/puce/getApprovedFiles';
+var approvedFilePath = '/puce/approvedFiles';
+
+
 var getFilesCancelledPath = '/puce/getFileCancelled';
 var cancelledFilePath = '/puce/cancelledFiles';

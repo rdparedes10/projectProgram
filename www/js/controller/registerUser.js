@@ -14,7 +14,7 @@ function onClickTableUpdateUser(data){
             if(($('#'+ value.id).val() !=='' && $('#'+ value.id).val() !== null) ){
                 if(value.type === 'checkbox'){
                     jsonData.user[value.id] = $('#'+ value.id).is(':checked')? 'true': 'false';
-                }if(value.type === 'password'){
+                }else if(value.type === 'password'){
                     jsonData.user[value.id] = encryptionText($('#'+ value.id).val());
                 }else{
                     

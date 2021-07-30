@@ -10,7 +10,7 @@ function loadAllClients(){
 }
 
 function successGetClients(data){
-    if (data && data.statusInfo.code === '0') {
+    if (data && data.statusInfo.code === '0' && data.params.length > 0) {
         loadInsertFile(data.params);    
     } else {
         alert("Error");
@@ -98,8 +98,85 @@ function getUserData() {
         },
     };
     sendPostInfoServices(urlRequest, jsonData, function(data) {
-        if (data && data.statusInfo.code === '0') {
+        if (data && data.statusInfo.code === '0' && data.params.length > 0) {
             loadUpdateUser(data);
         }
     });
+}
+
+
+function getFileAuthorized(data){
+    var jsonData = {
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+        authorized: data,
+    };
+    sendJsonAuthorizedFile(jsonData);
+}
+
+
+function getFileApproved(data){
+    var jsonData = {
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+        approved: data,
+    };
+    sendJsonApprovedFile(jsonData);
+}
+
+
+function sendJsonAuthorizedFile(jsonData){
+    var urlRequest = urlServices + getAuthorizedFiles;
+    sendPostInfoServices(urlRequest, jsonData, successAuthorizedFilesView);
+}
+
+function sendJsonApprovedFile(jsonData){
+    var urlRequest = urlServices + getApprovedFiles;
+    sendPostInfoServices(urlRequest, jsonData, successApprovedFilesView);
+}
+
+function successAuthorizedFilesView(data){
+    if (data && data.statusInfo.code === '0' && data.params.length > 0) {
+        loadAuthorizedFile(data.params);    
+    } else {
+        alert("Error");
+    }
+}
+
+function successApprovedFilesView(data){
+    if (data && data.statusInfo.code === '0' && data.params.length > 0) {
+        loadApprovedFile(data.params);    
+    } else {
+        alert("Error");
+    }
+}
+
+
+function getAllFile(data){
+    var jsonData = {
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+        approved: data,
+    };
+    sendJsonAllFile(jsonData);
+}
+
+
+function sendJsonAllFile(jsonData){
+    var urlRequest = urlServices + getAuthorizedFiles;
+    sendPostInfoServices(urlRequest, jsonData, successAllFileView);
+}
+
+function successAllFileView(data){
+    if (data && data.statusInfo.code === '0' && data.params.length > 0) {
+        loadConsultFile(data.params);    
+    } else {
+        alert("Error");
+    }
 }

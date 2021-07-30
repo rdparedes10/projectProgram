@@ -178,7 +178,52 @@ function getInputData(){
                 'type_tag': 'button',
                 'function': 'registerUser',
             }
-        ]
+        ],
+        'consult_data': [
+            {
+                'id': 'clientName',
+                'placeholder': 'Buscar por Nombre de cliente',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'clientRuc',
+                'placeholder': 'Buscar por RUC de cliente',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'typeSample',
+                'placeholder': 'Buscar por Tipo de Muestra',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'feature',
+                'placeholder': 'Buscar por Caracteristicas de Muestra',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'dateElaboration',
+                'placeholder': 'Buscar por Fecha de elaboracion de Muestra',
+                'type': 'date',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'dateDue',
+                'placeholder': 'Buscar por Fecha de caducidad de Muestra',
+                'type': 'date',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'buttonSearchFile',
+                'placeholder': 'Buscar',
+                'type': '',
+                'type_tag': 'button',
+                'function': 'searchFile',
+            }
+        ],
     };
 
     return data;
