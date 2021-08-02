@@ -6,17 +6,32 @@ function loadConsultFile(data){
     
     var html = addInputsInViewsInsert('consult_data');
     $('#consultFile').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Ingreso de Clientes</span>';
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Fichas</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
     addEventsInputsInsert('consult_data');
 }
 
-function getFilesAuthorized(data){
+function loadSuccessConsultFile(data) {
+    closeNav();
+    $("#mySidenav").hide();
+    $('#consultFile').show();
+    hideAllMenu('consultFile');
+    
+    var html = consultFileTable(data.params);
+    fileAndClients = data.params;
+    $('#consultFile').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Fichas</span>';
+    $('#mainMenuQuito').html(menu);
+    $('#mainMenuQuito').removeClass("hide-page");
+}
+
+
+function consultFileTable(data){
     
     var valuesTb = "";
     $.each(data, function(key,value) {
-        valuesTb += ' <tr id="' + value.file.id + '" onclick="onClickTableAuthorized(this)" >'
+        valuesTb += ' <tr id="' + value.file.id + '" onclick="onClickTableConsultFile(this)" >'
         valuesTb += '<td >' + value.file.id + '</td>';
         valuesTb += '<td>' +value.file.sample + '</td>';
         valuesTb += '<td>' +value.client.name + '</td>';
@@ -36,18 +51,5 @@ function getFilesAuthorized(data){
     +' </tr>'
     + valuesTb
     +'</table>';
-return html;
-}
-
-function loadSuccessConsultFile() {
-    closeNav();
-    $("#mySidenav").hide();
-    $('#consultFile').show();
-    hideAllMenu('consultFile');
-
-    var html = getSuccessView('Autorización de Ficha Exitoso');
-    $('#consultFile').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Autorización de Fichas</span>';
-    $('#mainMenuQuito').html(menu);
-    $('#mainMenuQuito').removeClass("hide-page")
+    return html;
 }

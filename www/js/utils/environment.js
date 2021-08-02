@@ -29,3 +29,5 @@ var getFilesCancelledPath = '/puce/getFileCancelled';
 var cancelledFilePath = '/puce/cancelledFiles';
 
 var searchFilePath = '/puce/searchFile';
+
+var showDocumentFilePath ='/puce/showDocument';

@@ -1,39 +1,53 @@
-function loadConsultClient(){
+function loadDeleteClient(data){
     closeNav();
     $("#mySidenav").hide();
-    $('#consultClient').show();
-    hideAllMenu('consultClient');
+    $('#deleteClient').show();
+    hideAllMenu('deleteClient');
     
-    var html = getClients();
-    $('#consultClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consulta Clientes</span>';
+    var html = getClientsDelete(data.params);
+    fileAndClients = data.params;
+    $('#deleteClient').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualización de datos de Cliente</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
     // addEventsInputsInsert('clients_data');
 }
 
-function getClients(){
+function getClientsDelete(data){
+    var valuesTb = "";
+    $.each(data, function(key,value) {
+        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableDeleteClient(this)" >'
+        valuesTb += '<td >' + value.ruc + '</td>';
+        valuesTb += '<td >' + value.name + '</td>';
+        valuesTb += '<td>' +value.date + '</td>';
+        valuesTb += '<td>' +value.email + '</td>';
+        valuesTb += '<td>' +value.phone + '</td>';
+        valuesTb += '<td>' +value.mobile + '</td>';
+        valuesTb += ' </tr>';
+    });
     var html = '<table class="table_client">' +
-    '<tr>' 
-        +'<th>Firstname</th>'
-        +'<th>Lastname</th> '
-        +'<th>Age</th>'
+    ' <tr>'
+        +'<th>RUC</th>'
+        +'<th>Cliente</th>'
+        +'<th>Fecha de Registro</th>'
+        +'<th>Email</th>'
+        +'<th>Telefono</th>'
+        +'<th>Celular</th>'
     +' </tr>'
-    +' <tr>'
-        +'<td>Jill</td>'
-        +'<td>Smith</td>'
-        +'<td>50</td>'
-    +' </tr>'
-    +' <tr>'
-        +'<td>Eve</td>'
-        +'<td>Jackson</td>'
-        +'<td>94</td>'
-    +'</tr>'
-    +'<tr>'
-        +'<td>John</td>'
-        +'<td>Doe</td>'
-        +'<td>80</td>'
-    +'</tr>'
+    + valuesTb
     +'</table>';
-return html;
+    return html;
+}
+
+function loadSuccessDeleteClient() {
+    closeNav();
+    $("#mySidenav").hide();
+    $('#DeleteClient').show();
+    hideAllMenu('deleteClient');
+
+    var html = getSuccessView('Actualización de los Datos del Cliente Exitoso');
+    $('#deleteClient').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualización de datos de Cliente</span>';
+    $('#mainMenuQuito').html(menu);
+    $('#mainMenuQuito').removeClass("hide-page")
 }
