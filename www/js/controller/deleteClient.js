@@ -6,53 +6,40 @@ function onClickTableDeleteClient(clientId){
             client = value; 
         }
     });
+    html +='<div style="background: #f2f2f2;"> ' ;
+    html +='<h3 class="h3_anulation"> Datos del Cliente</h3>';
+    $.each(data['clients_data'], function(key,value) {
 
-    var html = addDeleteInViewsInsert('clients_data', client, 'buttonDeleteClient');
+        if(client[value.id]){
+            
+            html +='<label class="load_data_left"><b>' + value.placeholder +' : </b>' + '</label>' ;
+            html +='<label class="load_data_right">' + client[value.id] + '</label>' ;
+            html +='<br>';
+            html +='<br>';
+            html +='<br>';
+        }
+    });
+    html +='</div>';
+    html +='<button onclick="deleteClientService();" class="button_load_data">Eliminar Cliente</button>';
     $('#deleteClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualizacion de datos de Cliente</span>';
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Eliminar Cliente</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
-    addEventsInputsInsert('clients_data');
-
-    $('#buttonDeleteClient').on('click',function() {
-        deleteClient(data['clients_data']);
-    });
 }
 
 
-function deleteClient(data){
+function deleteClientService() {
     var jsonData = {
         sessionId: sessionId,
         user: {
             userName: $("#username").val(),
         },
-        dataOld: client.ruc,
-        client: {}
+        file:{
+            "id": file.id,
+        },
+        dataOld: client.ruc
     };
-    var flag_validate = true; 
-    $.each(data, function(key,value) {
-        if(value.type_tag === 'input'){
-            if(($('#'+ value.id).val() !=='' && $('#'+ value.id).val() !== null) ){
-                if(value.type === 'checkbox'){
-                    jsonData.client[value.id] = $('#'+ value.id).is(':checked')? 'true': 'false';
-                }else{
-                    jsonData.client[value.id] = $('#'+ value.id).val();
-                }
-            } else {
-                $('#'+ value.id).val('');
-                $('#'+ value.id).css('border', '2px solid rgb(185, 20, 20)');
-                $('#idEr').show();
-                flag_validate = false;
-            }
-        }
-    });
-    if(flag_validate){
-        sendJsonDeleteClient(jsonData);
-    }
-}
-
-function sendJsonDeleteClient(jsonData){
- var urlRequest = urlServices + deleteClientPath;
+    var urlRequest = urlServices + deleteClientPath;
     sendPostInfoServices(urlRequest, jsonData, succesDeleteClientView);
 }
 

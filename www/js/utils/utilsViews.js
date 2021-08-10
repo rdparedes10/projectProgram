@@ -110,6 +110,10 @@ function callBacks(functionName, data){
     case 'searchFile':{
         searchFile(data);
         break;
+    };
+    case 'searchClient':{
+        searchClient(data);
+        break;
     }
     default:
     }

@@ -187,7 +187,7 @@ function getInputData(){
                 'type_tag': 'input'
             },
             {
-                'id': 'clientRuc',
+                'id': 'ruc',
                 'placeholder': 'Buscar por RUC de cliente',
                 'type': 'text',
                 'type_tag': 'input'
@@ -222,6 +222,27 @@ function getInputData(){
                 'type': '',
                 'type_tag': 'button',
                 'function': 'searchFile',
+            }
+        ],
+        'consult_client_data': [
+            {
+                'id': 'clientName',
+                'placeholder': 'Buscar por Nombre de cliente',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'ruc',
+                'placeholder': 'Buscar por RUC de cliente',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'buttonSearchClient',
+                'placeholder': 'Buscar',
+                'type': '',
+                'type_tag': 'button',
+                'function': 'searchClient',
             }
         ],
     };

@@ -1,37 +1,37 @@
-function loadConsultClient(data){
+function loadConsultUser(data){
     closeNav();
     $("#mySidenav").hide();
-    $('#consultClient').show();
-    hideAllMenu('consultClient');
+    $('#consultUser').show();
+    hideAllMenu('consultUser');
     
-    var html = addInputsInViewsInsert('consult_client_data');
-    $('#consultClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Clientes</span>';
+    var html = addInputsInViewsInsert('consult_user_data');
+    $('#consultUser').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Usuarios</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
-    addEventsInputsInsert('consult_client_data');
+    addEventsInputsInsert('consult_user_data');
 }
 
-function loadSuccessConsultClient(data) {
+function loadSuccessConsultUser(data) {
     closeNav();
     $("#mySidenav").hide();
-    $('#consultClient').show();
-    hideAllMenu('consultClient');
+    $('#consultUser').show();
+    hideAllMenu('consultUser');
     
-    var html = consultClientTable(data.params);
-    fileAndClients = data.params;
-    $('#consultClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Clientes</span>';
+    var html = consultUserTable(data.params);
+    fileAndUsers = data.params;
+    $('#consultUser').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Usuarios</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
 }
 
 
-function consultClientTable(data){
+function consultUserTable(data){
     
     var valuesTb = "";
     $.each(data, function(key,value) {
-        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableConsultClient(this)" >'
+        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableConsultUser(this)" >'
         valuesTb += '<td >' + value.ruc + '</td>';
         valuesTb += '<td >' + value.name + '</td>';
         valuesTb += '<td>' +value.date + '</td>';
@@ -40,10 +40,10 @@ function consultClientTable(data){
         valuesTb += '<td>' +value.mobile + '</td>';
         valuesTb += ' </tr>';
     });
-    var html = '<table class="table_client">' +
+    var html = '<table class="table_user">' +
     ' <tr>'
         +'<th>RUC</th>'
-        +'<th>Cliente</th>'
+        +'<th>Usere</th>'
         +'<th>Fecha de Registro</th>'
         +'<th>Email</th>'
         +'<th>Telefono</th>'

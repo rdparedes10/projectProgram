@@ -8,6 +8,8 @@ var createSession = '/puce/sessionId';
 var getUserDataURL = '/puce/getUserData';
 var getUserAll = '/puce/getUserAll';
 var updateUsersPath = '/puce/updateUser';
+var deleteUserPath = '/puce/deleteUser';
+
 
 var insertClientPath = '/puce/insertClient';
 var updateClientPath = '/puce/updateClient';
@@ -29,5 +31,6 @@ var getFilesCancelledPath = '/puce/getFileCancelled';
 var cancelledFilePath = '/puce/cancelledFiles';
 
 var searchFilePath = '/puce/searchFile';
+var searchClientPath = '/puce/searchClient';
 
 var showDocumentFilePath ='/puce/showDocument';

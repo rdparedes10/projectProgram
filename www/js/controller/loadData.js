@@ -180,3 +180,38 @@ function successAllFileView(data){
         alert("Error");
     }
 }
+
+
+function loadDeleteClientData(){
+    var rqClients ={
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+    }
+    var urlRequest = urlServices + getClientAllPath;
+    sendPostInfoServices(urlRequest, rqClients, loadDeleteClient);
+}
+
+
+function loadConsultClientData(){
+    var rqClients ={
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+    }
+    var urlRequest = urlServices + getClientAllPath;
+    sendPostInfoServices(urlRequest, rqClients, loadConsultClient);
+}
+
+function loadDeleteUserData(){
+    var rqUsers ={
+        sessionId: sessionId,
+        user: {
+            userName: $("#username").val(),
+        },
+    }
+    var urlRequest = urlServices + getUserAll;
+    sendPostInfoServices(urlRequest, rqUsers, loadDeleteUser);
+}

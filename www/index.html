@@ -42,7 +42,7 @@
 
     <script type="text/javascript" src="js/controller/anulationFile.js"></script>
     <script type="text/javascript" src="js/controller/consultClient.js"></script>
-    <script type="text/javascript" src="js/controller/consultDataUser.js"></script>
+    <script type="text/javascript" src="js/controller/consultUser.js"></script>
     <script type="text/javascript" src="js/controller/consultFile.js"></script>
     <script type="text/javascript" src="js/controller/deleteUser.js"></script>
     <script type="text/javascript" src="js/controller/insertFile.js"></script>
@@ -61,7 +61,7 @@
 
     <script type="text/javascript" src="js/view/anulationFile.js"></script>
     <script type="text/javascript" src="js/view/consultClient.js"></script>
-    <script type="text/javascript" src="js/view/consultDataUser.js"></script>
+    <script type="text/javascript" src="js/view/consultUser.js"></script>
     <script type="text/javascript" src="js/view/consultFile.js"></script>
     <script type="text/javascript" src="js/view/deleteUser.js"></script>
     <script type="text/javascript" src="js/view/insertFile.js"></script>
@@ -98,7 +98,7 @@
         <div id="mySidenav1" class="sidenav-sub hide-page">
             <a href="#" class="clientsInserts" onclick="loadInsertClient();">Ingresar Datos de Cliente</a>
             <a href="#" class="clientsUpdates" onclick="loadUpdateClientData();">Modificar Datos de Cliente</a>
-            <a href="#" class="clientsDeleted" onclick="loadClientsDeleted();">Eliminar Cliente</a>
+            <a href="#" class="clientsDeleted" onclick="loadDeleteClientData();">Eliminar Cliente</a>
         </div>
         <a href="#" class="files" onclick="openNavSub('mySidenav2');">Fichas</a>
         <div id="mySidenav2" class="sidenav-sub hide-page">
@@ -110,11 +110,11 @@
         <div id="mySidenav3" class="sidenav-sub hide-page">
             <a href="#" class="usersInserts" onclick="loadRegisterUser();">Ingresar Datos de Usuario</a>
             <a href="#" class="usersUpdates" onclick="getUserData();">Modificar Datos de Usuario</a>
-            <a href="#" class="usersDeletes" onclick="loadDeleteUser();">Eliminar Usuario</a>
+            <a href="#" class="usersDeletes" onclick="loadDeleteUserData();">Eliminar Usuario</a>
         </div>
         <a href="#" class="queries" onclick="openNavSub('mySidenav4');">Consultas</a>
         <div id="mySidenav4" class="sidenav-sub hide-page">
-            <a href="#" class="queriesClients" onclick="loadConsultClient();">Clientes</a>
+            <a href="#" class="queriesClients" onclick="loadConsultClientData();">Clientes</a>
             <a href="#" class="queriesFile" onclick="loadConsultFile();">Fichas</a>
             <a href="#" class="queriesUser" onclick="loadConsultDataUser();">Usuarios</a>
         </div>
@@ -133,7 +133,7 @@
 
     <div id="anulationFile" class="login-page hide-page"></div>
     <div id="consultClient" class="login-page hide-page"></div>
-    <div id="consultDataUser" class="login-page hide-page"></div>
+    <div id="consultUser" class="login-page hide-page"></div>
     <div id="consultFile" class="login-page hide-page"></div>
     <div id="deleteUser" class="login-page hide-page"></div>
     <div id="insertFile" class="login-page hide-page"></div>

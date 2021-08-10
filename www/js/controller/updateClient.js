@@ -1,12 +1,10 @@
 function onClickTableUpdateClient(clientId){
     var data = getInputData();
-    var html ='';
     $.each(fileAndClients, function(key,value) {
         if(value.ruc === clientId.id){
             client = value; 
         }
     });
-
     var html = addUpdateInViewsInsert('clients_data', client, 'buttonUpdateClient');
     $('#updateClient').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualizacion de datos de Cliente</span>';

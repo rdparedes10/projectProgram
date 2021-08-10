@@ -7,7 +7,7 @@ function loadDeleteClient(data){
     var html = getClientsDelete(data.params);
     fileAndClients = data.params;
     $('#deleteClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Borrar datos de Cliente</span>';
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Eliminar Cliente</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
 }
@@ -46,7 +46,7 @@ function loadSuccessDeleteClient() {
 
     var html = getSuccessView('Datos del Cliente eliminados con Exitoso');
     $('#deleteClient').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Borrar de datos de Cliente</span>';
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Eliminar Cliente</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page")
 }

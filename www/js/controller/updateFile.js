@@ -1,13 +1,12 @@
 function onClickTableUpdateFile(fileId, dataClient){
     var data = getInputData();
-    var html ='';
     $.each(fileAndClients, function(key,value) {
         if(value.id === fileId.id){
             file = value; 
         }
     });
     var html = getListClient(dataClient, file.clientRuc);
-     html += addUpdateInViewsInsert('file_data', file, 'buttonUpdateFile');
+    html += addUpdateInViewsInsert('file_data', file, 'buttonUpdateFile');
     $('#updateFile').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();">&larr; Actualizacion de datos de Ficha</span>';
     $('#mainMenuQuito').html(menu);

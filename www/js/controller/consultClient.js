@@ -4,9 +4,6 @@ function searchClient(data){
         user: {
             userName: $("#username").val(),
         },
-        client: {
-            ruc: $( "#selectClient" ).val(),
-        },
         search:{}
     };
     var flag_validate = false; 
@@ -28,7 +25,7 @@ function searchClient(data){
 }
 
 function sendJsonSearchClient(jsonData){
- var urlRequest = urlServices + searchFilePath;
+ var urlRequest = urlServices + searchClientPath;
     sendPostInfoServices(urlRequest, jsonData, successSearchClientView);
 }
 
@@ -44,14 +41,14 @@ function successSearchClientView(data){
 function onClickTableConsultClient(clientId){
     var data = getInputData();
     var html ='';
-    $.each(clientAndClients, function(key,value) {
-        if(value.client.id === clientId.id){
-            client = value.client; 
+    $.each(fileAndClients, function(key,value) {
+        if(value.ruc === clientId.id){
+            client = value; 
         }
     });
     html +='<div style="background: #f2f2f2;"> ' ;
-    html +='<h3 class="h3_anulation"> Datos de la Ficha</h3>';
-    $.each(data['client_data'], function(key,value) {
+    html +='<h3 class="h3_anulation"> Datos del Cliente</h3>';
+    $.each(data['clients_data'], function(key,value) {
 
         if(client[value.id]){
             
@@ -63,9 +60,9 @@ function onClickTableConsultClient(clientId){
         }
     });
     html +='</div>';
-    html +='<button onclick="consultFileShow();" class="button_load_data">Ver Documento</button>';
-    $('#consultFile').html(html);
-    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Fichas</span>';
+    html +='<button onclick="loadMenu();" class="button_load_data">Continuar</button>';
+    $('#consultClient').html(html);
+    var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Clientes</span>';
     $('#mainMenuQuito').html(menu);
     $('#mainMenuQuito').removeClass("hide-page");
 }
