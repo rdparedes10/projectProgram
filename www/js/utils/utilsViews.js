@@ -4,7 +4,7 @@ function hideAllMenu(menu) {
         "mainMenu",
         "anulationFile",
         "consultClient",
-        "consultDataUser",
+        "consultUser",
         "consultFile",
         "deleteUser",
         "insertFile",
@@ -98,21 +98,25 @@ function callBacks(functionName, data){
     case 'insertClient':{
         insertClient(data);
         break;
-    };
+    }
     case 'insertFile':{
         insertFile(data);
         break;
-    };
+    }
     case 'registerUser':{
         insertUser(data);
         break;
-    };
+    }
     case 'searchFile':{
         searchFile(data);
         break;
-    };
+    }
     case 'searchClient':{
         searchClient(data);
+        break;
+    }
+    case 'searchUser':{
+        searchUser(data);
         break;
     }
     default:

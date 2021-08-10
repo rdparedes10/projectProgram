@@ -245,6 +245,27 @@ function getInputData(){
                 'function': 'searchClient',
             }
         ],
+        'consult_user_data': [
+            {
+                'id': 'userName',
+                'placeholder': 'Buscar por Nombre del usuario',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'ci',
+                'placeholder': 'Buscar por CI del usuario',
+                'type': 'text',
+                'type_tag': 'input'
+            },
+            {
+                'id': 'buttonSearchUser',
+                'placeholder': 'Buscar',
+                'type': '',
+                'type_tag': 'button',
+                'function': 'searchUser',
+            }
+        ],
     };
 
     return data;

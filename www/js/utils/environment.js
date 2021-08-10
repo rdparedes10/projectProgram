@@ -32,5 +32,6 @@ var cancelledFilePath = '/puce/cancelledFiles';
 
 var searchFilePath = '/puce/searchFile';
 var searchClientPath = '/puce/searchClient';
+var searchUserPath =  '/puce/searchUser';
 
 var showDocumentFilePath ='/puce/showDocument';

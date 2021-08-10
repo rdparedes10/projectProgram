@@ -1,4 +1,4 @@
-function onClickTableUpdateUser(data){
+function insertUser(data){
     var jsonData = {
         sessionId: sessionId,
         client: {

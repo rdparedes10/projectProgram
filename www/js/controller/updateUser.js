@@ -3,7 +3,7 @@ function onClickTableUpdateUser(userId){
     var html ='';
     $.each(users, function(key,value) {
         if(value.ci === userId.id){
-            user = value; 
+            fileAndClients = value; 
         }
     });
     var html = addUpdateInViewsInsert('user_data', user, 'buttonUpdateUser');

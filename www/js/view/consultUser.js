@@ -19,7 +19,7 @@ function loadSuccessConsultUser(data) {
     hideAllMenu('consultUser');
     
     var html = consultUserTable(data.params);
-    fileAndUsers = data.params;
+    users = data.params;
     $('#consultUser').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Usuarios</span>';
     $('#mainMenuQuito').html(menu);
@@ -28,26 +28,21 @@ function loadSuccessConsultUser(data) {
 
 
 function consultUserTable(data){
-    
     var valuesTb = "";
     $.each(data, function(key,value) {
-        valuesTb += ' <tr id="' + value.ruc + '" onclick="onClickTableConsultUser(this)" >'
-        valuesTb += '<td >' + value.ruc + '</td>';
-        valuesTb += '<td >' + value.name + '</td>';
-        valuesTb += '<td>' +value.date + '</td>';
+        valuesTb += ' <tr id="' + value.ci + '" onclick="onClickTableConsultUser(this)" >'
+        valuesTb += '<td >' + value.ci + '</td>';
+        valuesTb += '<td >' + value.userName + '</td>';
         valuesTb += '<td>' +value.email + '</td>';
-        valuesTb += '<td>' +value.phone + '</td>';
-        valuesTb += '<td>' +value.mobile + '</td>';
+        valuesTb += '<td>' +value.role + '</td>';
         valuesTb += ' </tr>';
     });
-    var html = '<table class="table_user">' +
+    var html = '<table class="table_client">' +
     ' <tr>'
-        +'<th>RUC</th>'
-        +'<th>Usere</th>'
-        +'<th>Fecha de Registro</th>'
+        +'<th>Ci</th>'
+        +'<th>UserName</th>'
         +'<th>Email</th>'
-        +'<th>Telefono</th>'
-        +'<th>Celular</th>'
+        +'<th>Role</th>'
     +' </tr>'
     + valuesTb
     +'</table>';

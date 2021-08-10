@@ -1,4 +1,4 @@
-function loadConsultClient(data){
+function loadConsultClient(){
     closeNav();
     $("#mySidenav").hide();
     $('#consultClient').show();
