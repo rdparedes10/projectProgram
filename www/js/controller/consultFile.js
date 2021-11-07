@@ -63,7 +63,8 @@ function onClickTableConsultFile(fileId){
         }
     });
     html +='</div>';
-    html +='<button onclick="consultFileShow();" class="button_load_data">Ver Documento</button>';
+    //html +='<button onclick="consultFileShow();" class="button_load_data">Ver Documento</button>';
+    html += '  <button class="button_load_data" onclick="loadMenu()">Continuar</button></div>';
     $('#consultFile').html(html);
     var menu = '<span class="span-menu" onclick="backMenu();">&larr; Consultando Fichas</span>';
     $('#mainMenuQuito').html(menu);

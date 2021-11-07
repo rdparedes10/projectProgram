@@ -47,7 +47,7 @@ function addInputsInViewsInsert(view){
                 if( value.type !== 'checkbox'){
                     html += '<label>' + value.placeholder + '</label>';
                 }
-                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + '/>' ;
+                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + ' />' ;
                 html += '<br>';
                 break;
             };
@@ -148,7 +148,7 @@ function addUpdateInViewsInsert(view, valueData, buttonId){
                 if( value.type !== 'checkbox'){
                     html += '<label>' + value.placeholder + '</label>';
                 }
-                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + 'value='+ (valueData[value.id]? valueData[value.id]: '""') + ' />' ;
+                html +='<'+ value.type_tag + ' type=' + value.type + ' id='+ value.id  + ' placeholder="' + value.placeholder + '" ' + (value.style? ' style=' + value.style : "") + 'value="'+ (valueData[value.id]? valueData[value.id]: '""') + '" />' ;
                 html += '<br>';  
                 break;
             };
